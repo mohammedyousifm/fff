@@ -93,31 +93,43 @@
           <a href="#overview-home"><li class="list-group-item text-center p-3">
               Explore and control the pages of your amazing website. Customize and make it uniquely yours!
           </li></a>
-          <a href="dashboard.php"><li class="list-group-item text-center first-color p-3">Home Page  <span><i class="fa-solid fa-house"></i></span></li></a>
-          <a href="#home-page-settings" class="">
+          <a href="dashboard.php"><li class="list-group-item text-center first-color p-3"> Home Page  <span><i class="fa-solid fa-house"></i></span></li></a>
+          <a href="#home-page-settings" class="clikeon">
              <li class="list-group-item active-list p-3"><span><i class="fa-solid fa-house"></i> Home Page Settings</li>
            </a>
-           <a href="#about-page-settings">
+           <a href="#about-page-settings" class="clikeon">
              <li class="list-group-item active-list p-3"> <i class="fas fa-info-circle"></i> About Page Settings</li>
            </a>
-           <a href="#skills-page-settings">
+           <a href="#skills-page-settings" class="clikeon">
              <li class="list-group-item active-list  p-3"><i class="fas fa-chart-bar"></i> Skills Page Settings</li>
            </a>
-           <a href="#projects-page-settings">
+           <a href="#projects-page-settings" class="clikeon">
              <li class="list-group-item active-list  p-3"><i class="fas fa-project-diagram"></i> Projects Page Settings</li>
            </a>
-           <a href="#servers-page-settings">
+           <a href="#servers-page-settings" class="clikeon">
              <li class="list-group-item active-list  p-3"><i class="fas fa-server"></i> Servers Page Settings</li>
            </a>
-           <a href="#contact-page-settings">
+           <a href="#contact-page-settings" class="clikeon">
              <li class="list-group-item  active-list p-3"><i class="fas fa-address-book"></i> Contact Page Settings</li>
            </a>
-           <a href="#links-settings">
+           <a href="#links-settings" class="clikeon">
              <li class="list-group-item active-list  p-3"><i class="fas fa-link"></i> Links Settings</li>
            </a>
-           <a href="#footer-settings">
+           <a href="#footer-settings" class="clikeon">
              <li class="list-group-item active-list  p-3"><i class="fas fa-cogs"></i> Footer Settings</li>
            </a>
+           <a href="#footer-settings" class="clikeon">
+            <li class="list-group-item active-list  p-3"><i class="fas fa-cogs"></i> Footer Settings</li>
+          </a>
+          <a href="#footer-settings" class="clikeon">
+            <li class="list-group-item active-list  p-3"><i class="fas fa-cogs"></i> Footer Settings</li>
+          </a>
+          <a href="#footer-settings" class="clikeon">
+            <li class="list-group-item active-list  p-3"><i class="fas fa-cogs"></i> Footer Settings</li>
+          </a>
+          <a href="#footer-settings" class="clikeon">
+            <li class="list-group-item active-list  p-3"><i class="fas fa-cogs"></i> Footer Settings</li>
+          </a>
         </ul>
     </div>
 </div>
@@ -132,7 +144,8 @@
   <div class="topbar">
 
     <div class="toggle">
-      <i class="fa-solid icon fa-bars"></i>
+      <i class="fa-solid icon-1 fa-bars"></i>
+      <i class="fa-solid icon-2 fa-xmark"></i>
     </div>
 
     <div class="search">
@@ -165,7 +178,7 @@
    <section id="home-page-settings" class="dashboard-section text-center">
        <h2>Home page</h2>
        <!-- Add content for the overview section -->
-       <table class="table">
+       <table class="table" >
           <thead>
             <tr>
               <th scope="col">#</th>
@@ -209,36 +222,6 @@
               <td>2020/20/29</td>
               <td><button class="btn btn-danger">Edit</button></td>
             </tr>            <tr>
-              <th scope="row">1</th>
-              <td>Navbar</td>
-              <td>Heder name</td>
-              <td>Mohammed Yousif</td>
-              <td>Null</td>
-              <td>Null</td>
-              <td>2020/20/29</td>
-              <td><button class="btn btn-danger">Edit</button></td>
-            </tr>
-            <tr>
-              <th scope="row">1</th>
-              <td>Navbar</td>
-              <td>Heder name</td>
-              <td>Mohammed Yousif</td>
-              <td>Null</td>
-              <td>Null</td>
-              <td>2020/20/29</td>
-              <td><button class="btn btn-danger">Edit</button></td>
-            </tr>
-            <tr>
-              <th scope="row">1</th>
-              <td>Navbar</td>
-              <td>Heder name</td>
-              <td>Mohammed Yousif</td>
-              <td>Null</td>
-              <td>Null</td>
-              <td>2020/20/29</td>
-              <td><button class="btn btn-danger">Edit</button></td>
-            </tr>
-            <tr>
               <th scope="row">1</th>
               <td>Navbar</td>
               <td>Heder name</td>
@@ -589,6 +572,32 @@
 
 
 <script>
+
+let clickeon = document.querySelectorAll('.clikeon');
+    let mainn = document.querySelectorAll('.main');
+    let navig = document.querySelectorAll('.navigation');
+    let home = document.querySelectorAll('.home-dashboard');
+
+    // Add a click event listener to the element
+    clickeon.forEach(function(clickeon) {
+    clickeon.addEventListener('click', function() {
+
+      mainn.forEach(function(main) {
+                main.classList.remove('active');
+            });
+
+            navig.forEach(function(nav) {
+                nav.classList.remove('active');
+            });
+
+
+            home.forEach(function(dashhome) {
+              dashhome.classList.remove('active');
+            });
+
+    });
+  });
+
 // add hovered class to selected list item
 let list = document.querySelectorAll(".navigation li");
 
@@ -612,6 +621,8 @@ toggle.onclick = function () {
   main.classList.toggle("active");
   img.classList.toggle("active");
 };
+
+
 
 </script>
 
