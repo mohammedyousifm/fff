@@ -140,7 +140,7 @@
 ------------------------------
 -->
 
-<div class="main">
+<div id="home"  class="main">
   <div class="topbar">
 
     <div class="toggle">
@@ -166,7 +166,28 @@
 ----------  dashboard-section    ---------
 -----------------------------------------
 -->
-<main class="home-dashboard  text-center">
+<style>
+  .home-dashboard .icon-up{
+    opacity: 0;
+    position: fixed;
+    top: 0;
+    margin-top: 20rem;
+    right: 0;
+    cursor: pointer;
+    z-index: 100004;
+    font-size: 60px;
+    background-color: var(--first-color);
+    padding: 5px;
+    border-radius: 50%;
+    color: var(--white-color);
+    transition: opacity 0.100s ease-in-out;
+   }
+    /* Show the icon when its opacity is 1 */
+    .icon-up.show {
+    opacity: 1;
+   }
+</style>
+<main id="home" class="home-dashboard  text-center">
     <section class="dashboard-section">
         <header>
            <h3>Welcome to your <span id="animated-text">dashboard</span></h3>
@@ -246,6 +267,7 @@
    </section>
 
    <section id="about-page-settings" class="dashboard-section">
+   <a href="#home"><i class="fa-solid icon-up fa-arrow-up"></i></a>
        <h2>About page</h2>
        <!-- Add content for the statistics section -->
        <table class="table">
@@ -572,58 +594,66 @@
 
 
 <script>
+  // Function to handle scroll and show/hide icon
+  function handleScroll() {
+      let goup = document.querySelector('.icon-up');
+      let opacity = Math.min(window.scrollY / 600, 1);
 
-let clickeon = document.querySelectorAll('.clikeon');
-    let mainn = document.querySelectorAll('.main');
-    let navig = document.querySelectorAll('.navigation');
-    let home = document.querySelectorAll('.home-dashboard');
+      goup.style.opacity = opacity;
 
-    // Add a click event listener to the element
-    clickeon.forEach(function(clickeon) {
-    clickeon.addEventListener('click', function() {
+      if (opacity > 0) {
+          goup.classList.add('show');
+      } else {
+          goup.classList.remove('show');
+      }
+  }
 
-      mainn.forEach(function(main) {
-                main.classList.remove('active');
-            });
+  // Function to remove 'active' class from sections
+  function removeActiveClasses() {
+      let sections = document.querySelectorAll('.main, .navigation, .home-dashboard');
 
-            navig.forEach(function(nav) {
-                nav.classList.remove('active');
-            });
+      sections.forEach(function(section) {
+          section.classList.remove('active');
+      });
+  }
 
+  // Function to add 'hovered' class to selected list item
+  function activeLink() {
+      let list = document.querySelectorAll(".navigation li");
 
-            home.forEach(function(dashhome) {
-              dashhome.classList.remove('active');
-            });
+      list.forEach((item) => {
+          item.classList.remove("hovered");
+      });
 
-    });
+      this.classList.add("hovered");
+  }
+
+  // Function to handle menu toggle
+  function toggleMenu() {
+      let navigation = document.querySelector(".navigation");
+      let main = document.querySelector(".main");
+      let img = document.querySelector(".home-dashboard");
+
+      navigation.classList.toggle("active");
+      main.classList.toggle("active");
+      img.classList.toggle("active");
+  }
+
+  // Event listeners
+  window.addEventListener('scroll', handleScroll);
+
+  let clickeon = document.querySelectorAll('.clikeon');
+  clickeon.forEach(function(clickeon) {
+      clickeon.addEventListener('click', function() {
+          removeActiveClasses();
+      });
   });
 
-// add hovered class to selected list item
-let list = document.querySelectorAll(".navigation li");
+  let list = document.querySelectorAll(".navigation li");
+  list.forEach((item) => item.addEventListener("mouseover", activeLink));
 
-function activeLink() {
-  list.forEach((item) => {
-    item.classList.remove("hovered");
-  });
-  this.classList.add("hovered");
-}
-
-list.forEach((item) => item.addEventListener("mouseover", activeLink));
-
-// Menu Toggle
-let toggle = document.querySelector(".toggle");
-let navigation = document.querySelector(".navigation");
-let main = document.querySelector(".main");
-let img = document.querySelector(".home-dashboard");
-
-toggle.onclick = function () {
-  navigation.classList.toggle("active");
-  main.classList.toggle("active");
-  img.classList.toggle("active");
-};
-
-
-
+  let toggle = document.querySelector(".toggle");
+  toggle.onclick = toggleMenu;
 </script>
 
 
