@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html dir="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="../logo/logo.png" type="image/x-icon" />
+  <link rel="icon" href="../images/home-page-g.png">
+  <title>mohammed yousif</title>
+
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <!-- Styles for home page links -->
+  <link rel="stylesheet" href="back-end.css" />
+
+  <!-- style bootstrap -->
+  <link rel="stylesheet" href="bootstrap.min.css" />
+  <link rel="stylesheet" href="bootstrap.min.css.map" />
+
+</head>
+<body class="p-0 m-0 border-0 bd-example">
+
+
+<style>
+  body {
+  background-color:var(---color-text-header);
+  font-family: 'Oswald', sans-serif;
+
+}
+.loader {
+    width: 48px;
+    height: 48px;
+    border: 10px solid #FFF;
+    border-radius: 50%;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+    box-sizing: border-box;
+    z-index: 100000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.loader--hide {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.loader::before {
+  content: "";
+      position: absolute;
+      box-sizing: border-box;
+      inset:-10px;
+      border-radius: 50%;
+      border:10px solid #FF3D00;
+      animation: prixClipFix 2s infinite linear;
+}
+
+@keyframes prixClipFix {
+        0%   {clip-path:polygon(50% 50%,0 0,0 0,0 0,0 0,0 0)}
+        25%  {clip-path:polygon(50% 50%,0 0,100% 0,100% 0,100% 0,100% 0)}
+        50%  {clip-path:polygon(50% 50%,0 0,100% 0,100% 100%,100% 100%,100% 100%)}
+        75%  {clip-path:polygon(50% 50%,0 0,100% 0,100% 100%,0 100%,0 100%)}
+        100% {clip-path:polygon(50% 50%,0 0,100% 0,100% 100%,0 100%,0 0)}
+    }
+
+</style>
+<span class="loader"></span>
+<script>
+   window.addEventListener("load", () => {
+       const loader = document.querySelector(".loader");
+       loader.classList.add("loader--hide");
+       loader.style.animation = "none"; // Stop the animation
+   });
+</script>
+
+
+
+
+<!--
+------------------------------
+------   Navigation     ------
+------------------------------
+ -->
+
+<div class="containerr">
+  <div class="navigation" id="scrollableDiv">
+
+  <div class="card pt-3">
+      <h4 class="text-center pb-3">Your Dashboard</h4>
+        <ul class="list-group list-group-flush">
+          <a href="#overview-home"><li class="list-group-item text-center p-3">
+              Explore and control the pages of your amazing website. Customize and make it uniquely yours!
+          </li></a>
+          <a href="dashboard.php"><li class="list-group-item text-center first-color p-3">Home Page  <span><i class="fa-solid fa-house"></i></span></li></a>
+          <a href="#home-page-settings" class="">
+             <li class="list-group-item active-list p-3"><span><i class="fa-solid fa-house"></i> Home Page Settings</li>
+           </a>
+           <a href="#about-page-settings">
+             <li class="list-group-item active-list p-3"> <i class="fas fa-info-circle"></i> About Page Settings</li>
+           </a>
+           <a href="#skills-page-settings">
+             <li class="list-group-item active-list  p-3"><i class="fas fa-chart-bar"></i> Skills Page Settings</li>
+           </a>
+           <a href="#projects-page-settings">
+             <li class="list-group-item active-list  p-3"><i class="fas fa-project-diagram"></i> Projects Page Settings</li>
+           </a>
+           <a href="#servers-page-settings">
+             <li class="list-group-item active-list  p-3"><i class="fas fa-server"></i> Servers Page Settings</li>
+           </a>
+           <a href="#contact-page-settings">
+             <li class="list-group-item  active-list p-3"><i class="fas fa-address-book"></i> Contact Page Settings</li>
+           </a>
+           <a href="#links-settings">
+             <li class="list-group-item active-list  p-3"><i class="fas fa-link"></i> Links Settings</li>
+           </a>
+           <a href="#footer-settings">
+             <li class="list-group-item active-list  p-3"><i class="fas fa-cogs"></i> Footer Settings</li>
+           </a>
+        </ul>
+    </div>
+</div>
+
+<!--
+------------------------------
+----------   Main    ---------
+------------------------------
+-->
+
+<div class="main">
+  <div class="topbar">
+
+    <div class="toggle">
+      <i class="fa-solid icon fa-bars"></i>
+    </div>
+
+    <div class="search">
+       <label>
+        <input type="text" dir="rtl" placeholder="البحث هنا" />
+      </label>
+    </div>
+
+    <div class="user">
+      <img src="../images/about-me-img.png" alt="" />
+    </div>
+
+</div>
+
+
+<!--
+-----------------------------------------
+----------  dashboard-section    ---------
+-----------------------------------------
+-->
+<main class="home-dashboard  text-center">
+    <section class="dashboard-section">
+        <header>
+           <h3>Welcome to your <span id="animated-text">dashboard</span></h3>
+       </header>
+       <!-- Add content for the overview section -->
+       <img src="../images/Site Stats-pana-svg.png" alt="">
+   </section>
+
+   <section id="home-page-settings" class="dashboard-section text-center">
+       <h2>Home page</h2>
+       <!-- Add content for the overview section -->
+       <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Content type</th>
+              <th scope="col">Content name</th>
+              <th scope="col">Content text</th>
+              <th scope="col">Image path</th>
+              <th scope="col">Link url</th>
+              <th scope="col">last updated</th>
+              <th scope="col">Handle</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">1</th>
+              <td>Navbar</td>
+              <td>Heder name</td>
+              <td>Mohammed Yousif</td>
+              <td>Null</td>
+              <td>Null</td>
+              <td>2020/20/29</td>
+              <td><button class="btn btn-danger">Edit</button></td>
+            </tr>
+            <tr>
+              <th scope="row">1</th>
+              <td>Navbar</td>
+              <td>Heder name</td>
+              <td>Mohammed Yousif</td>
+              <td>Null</td>
+              <td>Null</td>
+              <td>2020/20/29</td>
+              <td><button class="btn btn-danger">Edit</button></td>
+            </tr>
+            <tr>
+              <th scope="row">1</th>
+              <td>Navbar</td>
+              <td>Heder name</td>
+              <td>Mohammed Yousif</td>
+              <td>Null</td>
+              <td>Null</td>
+              <td>2020/20/29</td>
+              <td><button class="btn btn-danger">Edit</button></td>
+            </tr>            <tr>
+              <th scope="row">1</th>
+              <td>Navbar</td>
+              <td>Heder name</td>
+              <td>Mohammed Yousif</td>
+              <td>Null</td>
+              <td>Null</td>
+              <td>2020/20/29</td>
+              <td><button class="btn btn-danger">Edit</button></td>
+            </tr>
+            <tr>
+              <th scope="row">1</th>
+              <td>Navbar</td>
+              <td>Heder name</td>
+              <td>Mohammed Yousif</td>
+              <td>Null</td>
+              <td>Null</td>
+              <td>2020/20/29</td>
+              <td><button class="btn btn-danger">Edit</button></td>
+            </tr>
+            <tr>
+              <th scope="row">1</th>
+              <td>Navbar</td>
+              <td>Heder name</td>
+              <td>Mohammed Yousif</td>
+              <td>Null</td>
+              <td>Null</td>
+              <td>2020/20/29</td>
+              <td><button class="btn btn-danger">Edit</button></td>
+            </tr>
+            <tr>
+              <th scope="row">1</th>
+              <td>Navbar</td>
+              <td>Heder name</td>
+              <td>Mohammed Yousif</td>
+              <td>Null</td>
+              <td>Null</td>
+              <td>2020/20/29</td>
+              <td><button class="btn btn-danger">Edit</button></td>
+            </tr>
+            <tr>
+              <th scope="row">1</th>
+              <td>Navbar</td>
+              <td>Heder name</td>
+              <td>Mohammed Yousif</td>
+              <td>Null</td>
+              <td>Null</td>
+              <td>2020/20/29</td>
+              <td><button class="btn btn-danger">Edit</button></td>
+            </tr>
+          </tbody>
+        </table>
+   </section>
+
+   <section id="about-page-settings" class="dashboard-section">
+       <h2>About page</h2>
+       <!-- Add content for the statistics section -->
+       <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Content type</th>
+              <th scope="col">Content name</th>
+              <th scope="col">Content text</th>
+              <th scope="col">Image path</th>
+              <th scope="col">Link url</th>
+              <th scope="col">last updated</th>
+              <th scope="col">Handle</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">1</th>
+              <td>Navbar</td>
+              <td>Heder name</td>
+              <td>Mohammed Yousif</td>
+              <td>Null</td>
+              <td>Null</td>
+              <td>2020/20/29</td>
+              <td><button class="btn btn-danger">Edit</button></td>
+            </tr>
+            <tr>
+              <th scope="row">1</th>
+              <td>Navbar</td>
+              <td>Heder name</td>
+              <td>Mohammed Yousif</td>
+              <td>Null</td>
+              <td>Null</td>
+              <td>2020/20/29</td>
+              <td><button class="btn btn-danger">Edit</button></td>
+            </tr>
+            <tr>
+              <th scope="row">1</th>
+              <td>Navbar</td>
+              <td>Heder name</td>
+              <td>Mohammed Yousif</td>
+              <td>Null</td>
+              <td>Null</td>
+              <td>2020/20/29</td>
+              <td><button class="btn btn-danger">Edit</button></td>
+            </tr>            <tr>
+              <th scope="row">1</th>
+              <td>Navbar</td>
+              <td>Heder name</td>
+              <td>Mohammed Yousif</td>
+              <td>Null</td>
+              <td>Null</td>
+              <td>2020/20/29</td>
+              <td><button class="btn btn-danger">Edit</button></td>
+            </tr>
+            <tr>
+              <th scope="row">1</th>
+              <td>Navbar</td>
+              <td>Heder name</td>
+              <td>Mohammed Yousif</td>
+              <td>Null</td>
+              <td>Null</td>
+              <td>2020/20/29</td>
+              <td><button class="btn btn-danger">Edit</button></td>
+            </tr>
+            <tr>
+              <th scope="row">1</th>
+              <td>Navbar</td>
+              <td>Heder name</td>
+              <td>Mohammed Yousif</td>
+              <td>Null</td>
+              <td>Null</td>
+              <td>2020/20/29</td>
+              <td><button class="btn btn-danger">Edit</button></td>
+            </tr>
+            <tr>
+              <th scope="row">1</th>
+              <td>Navbar</td>
+              <td>Heder name</td>
+              <td>Mohammed Yousif</td>
+              <td>Null</td>
+              <td>Null</td>
+              <td>2020/20/29</td>
+              <td><button class="btn btn-danger">Edit</button></td>
+            </tr>
+            <tr>
+              <th scope="row">1</th>
+              <td>Navbar</td>
+              <td>Heder name</td>
+              <td>Mohammed Yousif</td>
+              <td>Null</td>
+              <td>Null</td>
+              <td>2020/20/29</td>
+              <td><button class="btn btn-danger">Edit</button></td>
+            </tr>
+          </tbody>
+        </table>
+   </section>
+
+   <section id="skills-page-settings" class="dashboard-section">
+       <h2>Skills page</h2>
+       <!-- Add content for the settings section -->
+       <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Content type</th>
+              <th scope="col">Content name</th>
+              <th scope="col">Content text</th>
+              <th scope="col">Image path</th>
+              <th scope="col">Link url</th>
+              <th scope="col">last updated</th>
+              <th scope="col">Handle</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">1</th>
+              <td>Navbar</td>
+              <td>Heder name</td>
+              <td>Mohammed Yousif</td>
+              <td>Null</td>
+              <td>Null</td>
+              <td>2020/20/29</td>
+              <td><button class="btn btn-danger">Edit</button></td>
+            </tr>
+            <tr>
+              <th scope="row">1</th>
+              <td>Navbar</td>
+              <td>Heder name</td>
+              <td>Mohammed Yousif</td>
+              <td>Null</td>
+              <td>Null</td>
+              <td>2020/20/29</td>
+              <td><button class="btn btn-danger">Edit</button></td>
+            </tr>
+            <tr>
+              <th scope="row">1</th>
+              <td>Navbar</td>
+              <td>Heder name</td>
+              <td>Mohammed Yousif</td>
+              <td>Null</td>
+              <td>Null</td>
+              <td>2020/20/29</td>
+              <td><button class="btn btn-danger">Edit</button></td>
+            </tr>            <tr>
+              <th scope="row">1</th>
+              <td>Navbar</td>
+              <td>Heder name</td>
+              <td>Mohammed Yousif</td>
+              <td>Null</td>
+              <td>Null</td>
+              <td>2020/20/29</td>
+              <td><button class="btn btn-danger">Edit</button></td>
+            </tr>
+            <tr>
+              <th scope="row">1</th>
+              <td>Navbar</td>
+              <td>Heder name</td>
+              <td>Mohammed Yousif</td>
+              <td>Null</td>
+              <td>Null</td>
+              <td>2020/20/29</td>
+              <td><button class="btn btn-danger">Edit</button></td>
+            </tr>
+            <tr>
+              <th scope="row">1</th>
+              <td>Navbar</td>
+              <td>Heder name</td>
+              <td>Mohammed Yousif</td>
+              <td>Null</td>
+              <td>Null</td>
+              <td>2020/20/29</td>
+              <td><button class="btn btn-danger">Edit</button></td>
+            </tr>
+            <tr>
+              <th scope="row">1</th>
+              <td>Navbar</td>
+              <td>Heder name</td>
+              <td>Mohammed Yousif</td>
+              <td>Null</td>
+              <td>Null</td>
+              <td>2020/20/29</td>
+              <td><button class="btn btn-danger">Edit</button></td>
+            </tr>
+            <tr>
+              <th scope="row">1</th>
+              <td>Navbar</td>
+              <td>Heder name</td>
+              <td>Mohammed Yousif</td>
+              <td>Null</td>
+              <td>Null</td>
+              <td>2020/20/29</td>
+              <td><button class="btn btn-danger">Edit</button></td>
+            </tr>
+          </tbody>
+        </table>
+   </section>
+
+
+   <section id="projects-page-settings" class="dashboard-section">
+       <h2>Project page</h2>
+       <!-- Add content for the settings section -->
+   </section>
+
+
+   <section id="servers-page-settings" class="dashboard-section">
+       <h2>Servers page</h2>
+       <!-- Add content for the settings section -->
+       <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Content type</th>
+              <th scope="col">Content name</th>
+              <th scope="col">Content text</th>
+              <th scope="col">Image path</th>
+              <th scope="col">Link url</th>
+              <th scope="col">last updated</th>
+              <th scope="col">Handle</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">1</th>
+              <td>Navbar</td>
+              <td>Heder name</td>
+              <td>Mohammed Yousif</td>
+              <td>Null</td>
+              <td>Null</td>
+              <td>2020/20/29</td>
+              <td><button class="btn btn-danger">Edit</button></td>
+            </tr>
+            <tr>
+              <th scope="row">1</th>
+              <td>Navbar</td>
+              <td>Heder name</td>
+              <td>Mohammed Yousif</td>
+              <td>Null</td>
+              <td>Null</td>
+              <td>2020/20/29</td>
+              <td><button class="btn btn-danger">Edit</button></td>
+            </tr>
+            <tr>
+              <th scope="row">1</th>
+              <td>Navbar</td>
+              <td>Heder name</td>
+              <td>Mohammed Yousif</td>
+              <td>Null</td>
+              <td>Null</td>
+              <td>2020/20/29</td>
+              <td><button class="btn btn-danger">Edit</button></td>
+            </tr>            <tr>
+              <th scope="row">1</th>
+              <td>Navbar</td>
+              <td>Heder name</td>
+              <td>Mohammed Yousif</td>
+              <td>Null</td>
+              <td>Null</td>
+              <td>2020/20/29</td>
+              <td><button class="btn btn-danger">Edit</button></td>
+            </tr>
+            <tr>
+              <th scope="row">1</th>
+              <td>Navbar</td>
+              <td>Heder name</td>
+              <td>Mohammed Yousif</td>
+              <td>Null</td>
+              <td>Null</td>
+              <td>2020/20/29</td>
+              <td><button class="btn btn-danger">Edit</button></td>
+            </tr>
+            <tr>
+              <th scope="row">1</th>
+              <td>Navbar</td>
+              <td>Heder name</td>
+              <td>Mohammed Yousif</td>
+              <td>Null</td>
+              <td>Null</td>
+              <td>2020/20/29</td>
+              <td><button class="btn btn-danger">Edit</button></td>
+            </tr>
+            <tr>
+              <th scope="row">1</th>
+              <td>Navbar</td>
+              <td>Heder name</td>
+              <td>Mohammed Yousif</td>
+              <td>Null</td>
+              <td>Null</td>
+              <td>2020/20/29</td>
+              <td><button class="btn btn-danger">Edit</button></td>
+            </tr>
+            <tr>
+              <th scope="row">1</th>
+              <td>Navbar</td>
+              <td>Heder name</td>
+              <td>Mohammed Yousif</td>
+              <td>Null</td>
+              <td>Null</td>
+              <td>2020/20/29</td>
+              <td><button class="btn btn-danger">Edit</button></td>
+            </tr>
+          </tbody>
+        </table>
+   </section>
+
+
+   <section id="contact-page-settings" class="dashboard-section">
+       <h2>Contact page</h2>
+        <!-- Add content for the settings section -->
+   </section>
+
+   <section id="footer-page-settings" class="dashboard-section">
+       <h2>Footer page</h2>
+       <!-- Add content for the settings section -->
+   </section>
+
+   <section id="links-page-settings" class="dashboard-section">
+       <h2>Links page</h2>
+       <!-- Add content for the settings section -->
+   </section>
+</main>
+
+
+
+<script>
+// add hovered class to selected list item
+let list = document.querySelectorAll(".navigation li");
+
+function activeLink() {
+  list.forEach((item) => {
+    item.classList.remove("hovered");
+  });
+  this.classList.add("hovered");
+}
+
+list.forEach((item) => item.addEventListener("mouseover", activeLink));
+
+// Menu Toggle
+let toggle = document.querySelector(".toggle");
+let navigation = document.querySelector(".navigation");
+let main = document.querySelector(".main");
+let img = document.querySelector(".home-dashboard");
+
+toggle.onclick = function () {
+  navigation.classList.toggle("active");
+  main.classList.toggle("active");
+  img.classList.toggle("active");
+};
+
+</script>
+
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="container">
+    <p>&copy; 2023 Your Website Name. All rights reserved.</p>
+  </div>
+</footer>
+
+<!-- script js bootstrap  -->
+    <script src="bootstrap.min.js"></script>
+    <script src="bootstrap.bundle.min.js"></script>
+    <script src="bootstrap.bundle.min.js.map"></script>
+<!-- javascript file  -->
+    <script src="dashboard.js"></script>
+
+ </body>
+</html>
+

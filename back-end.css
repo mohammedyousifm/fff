@@ -1,0 +1,388 @@
+/* =============== Globals ============== */
+:root {
+  --hue-color: 224;
+  --first-color: hsl(var(--hue-color), 89%, 60%);
+  --first-colorr: hsl(var(--hue-color), 50%, 60%);
+  --second-color: hsl(var(--hue-color), 56%, 12%);
+  --white-color: #fff;
+}
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.containerr {
+  position: relative;
+  width: 100%;
+}
+
+a {
+  text-decoration: none;
+}
+
+
+/*
+-----------------------------
+------STYLE LOGIN PAGE-------
+-----------------------------
+*/
+#login-dashboard {
+  height: 100vh;
+  background: rgba(255, 255, 255, 0.8);
+     .login-container {
+      border-radius: 10px;
+        .img-container img{
+        width: 350px;
+        border-radius: 5%;
+        margin-bottom: 20px;
+      }
+    .form-container  form{
+          padding: 1px;
+    }
+       input,
+       .btn {
+         width: 100%;
+         padding: 10px;
+     }
+  }
+}
+#login-dashboard  .header-container h1 {
+  color: var(--white-color);
+  background-color:  var(--first-color);
+  border-radius: 5px;
+  padding: 10px 0;
+  margin-bottom: 50px;
+}
+@media screen and (max-width: 768px) {
+ #login-dashboard .login-container .img-container img{
+            width: 320px;
+            height: 300px;
+
+      }
+  }
+
+/*
+--------------------------------------
+------  home-page-dashboard     ------
+--------------------------------------
+*/
+.home-dashboard header {
+  text-align: center;
+  padding: 1em;
+}
+.home-dashboard img {
+  width: 690px;
+  height: 470px;
+}
+.home-dashboard header h3 {
+  overflow: hidden;
+  white-space: nowrap;
+  border-radius: 10px;
+  padding: 10px;
+  animation: type 8s steps(100, end);
+}
+@keyframes type {
+  from {
+      width: 0;
+  }
+
+  to {
+      width: 100%;
+  }
+}
+.home-dashboard header h3::after {
+ content: '';
+ margin-right: -5px;
+ background-color:  var(--first-color);
+ padding: 5px 20px;
+ border-radius: 20%;
+}
+.home-dashboard header h3::before {
+ content: '';
+ margin-left: -15px;
+ background-color: var(--first-color);
+ padding: 5px 20px;
+ border-radius: 20%;
+}
+.home-dashboard .dashboard-section {
+    background-color: #fff;
+    padding: 1em;
+    margin-bottom: 1em;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+
+/*
+------------------------------
+------   Navigation     ------
+------------------------------
+*/
+.navigation {
+  position: fixed;
+  width: 250px;
+  height: 100%;
+  background-color:  var(--first-color);
+  border-left: 10px solid var(--blue);
+  transition: 0.5s;
+  overflow: hidden;
+}
+.navigation.active {
+  width: 0px;
+}
+.navigation a {
+  text-decoration: none;
+  font-size: 15px;
+}
+.navigation .first-color {
+  color: var(--first-color);
+  font-size: 20px;
+}
+.navigation .card {
+  background-color: var(--first-color);
+}
+.navigation .first-color:hover {
+  background-color: var(--first-color);
+  color: var(--white-color);
+}
+.navigation .active-list:hover {
+background-color: var(--first-color);
+color: var(--white-color);
+}
+
+.navigation h4 ,.navigation p{
+  color: var(--white-color);
+}
+/* Style for the container div */
+#scrollableDiv {
+  overflow: auto;
+}
+#scrollableDiv::-webkit-scrollbar {
+  width: 2px; /* Width of the entire scrollbar */
+}
+#scrollableDiv::-webkit-scrollbar-thumb {
+  background-color: var(--first-color); /* Color of the scroll thumb */
+  border-radius: 6px; /* Rounded corners of the thumb */
+}
+#scrollableDiv::-webkit-scrollbar-track {
+  background-color:  var(--first-color); /* Color of the scrollbar track */
+}
+#scrollableDiv::-webkit-scrollbar-thumb:hover {
+  background-color: #555; /* Color of the thumb on hover */
+}
+
+
+/*
+------------------------------
+----------   Main    ---------
+------------------------------
+*/
+.main {
+  position: absolute;
+  z-index: 10000;
+  width: calc(100% - 300px);
+  left: 300px;
+  min-height: 100vh;
+  transition: 0.5s;
+}
+.main.active {
+  width: calc(100% - 80px);
+  left: 50px;
+}
+
+.topbar {
+  width: 100%;
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px;
+}
+
+.toggle {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2.5rem;
+  cursor: pointer;
+  color: var(--first-color);
+}
+
+.search {
+  position: relative;
+  width: 400px;
+  margin: 0 10px;
+}
+
+.search label input {
+  width: 100%;
+  height: 40px;
+  border-radius: 40px;
+  padding: 5px 20px;
+  padding-left: 35px;
+  font-size: 18px;
+  outline: none;
+  border: 1px solid var(--first-color);
+}
+
+.search label ion-icon {
+  position: absolute;
+  top: 0;
+  left: 10px;
+  font-size: 1.2rem;
+}
+.search  h1{
+  color: var(--first-color);
+  font-size: 25px;
+}
+
+
+
+.user {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.user img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+/* ---------------------------------------
+----------   Responsive   Design ---------
+------------------------------------------ */
+@media (max-width: 991px) {
+  .navigation {
+    left: -300px;
+  }
+  .navigation.active {
+    width: 300px;
+    left: 0;
+  }
+  .main {
+    width: 100%;
+    left: 0;
+  }
+  .main.active {
+    left: 300px;
+  }
+
+  #home-dashboard table th{
+     font-size: 12px;
+  }
+
+}
+
+
+@media (max-width: 480px) {
+  .user {
+    min-width: 40px;
+  }
+  .navigation {
+    width: 10%;
+    left: -100%;
+    z-index: 1000;
+  }
+
+  .navigation.active {
+    width: 38%;
+    left: 50;
+  }
+  .main.active {
+    width: 50%;
+    left: 160px;
+  }
+  .main.active .search {
+    opacity: 0;
+  }
+  .toggle {
+    z-index: 10001;
+  }
+  .main.active .toggle {
+    color: #ff0000;
+    position: fixed;
+    left: initial;
+  }
+  .navigation a {
+    font-size: 8px;
+  }
+  .navigation .first-color {
+    font-size: 12px;
+  }
+  .navigation h4{
+    font-size: 15px;
+  }
+
+  .home-dashboard {
+   z-index: -1;
+  }
+   .home-dashboard img {
+    width: 270px;
+    height: 470px;
+  }
+  .home-dashboard.active{
+   opacity: .1;
+    }
+  .home-dashboard.active table{
+    display: none;
+    }
+    .home-dashboard.active img{
+      width: 150px;
+      }
+  .home-dashboard table th{
+    font-size: 8px;
+  }
+  .home-dashboard table td{
+   font-size: 5px;
+  }
+  .home-dashboard button{
+    font-size: 5px;
+  }
+  .home-dashboard header h3 {
+    font-size: 15px;
+    border-radius: 10px;
+    padding: 5px;
+    animation: type 8s steps(100, end);
+  }
+  @keyframes type {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 100%;
+    }
+  }
+  #home-dashboard header h3::after {
+   margin-right: -5px;
+   padding: 5px 10px;
+   border-radius: 20%;
+  }
+  #home-dashboard header h3::before {
+   margin-left: -15px;
+   padding: 5px 10px;
+   border-radius: 20%;
+  }
+}
+
+footer {
+  display: none;
+}
